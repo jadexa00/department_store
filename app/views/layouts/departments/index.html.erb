@@ -1,0 +1,10 @@
+<h1>Pick a Department to View its Items</h1>
+<%= link_to "Create New Department", new_department_path %>
+<hr />
+<h3><%= @departments.length === 0 ? "No Departments Added" : "" %></h3>
+<ul>
+    <% @departments.each do |department| %>
+        <li> <%= link_to department.name, department_path(department) %> </li>
+        <% end %>
+
+</ul>

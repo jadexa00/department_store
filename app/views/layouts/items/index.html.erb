@@ -1,0 +1,12 @@
+<h1>Items</h1>
+<%= link_to "Create New Item", new_department_item_path(@department) %>
+<hr />
+<h3><%= @items.length === 0 ? "No Items Added" : "" %></h3>
+
+<ul>
+    <% @items.each do |item| %>
+        <li><%= link_to item.name, department_item_path(@department, item) %></li>
+<% end %>
+</ul>
+
+<%= link_to "Back", department_path(@department) %>
